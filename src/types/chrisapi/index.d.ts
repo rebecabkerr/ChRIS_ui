@@ -556,34 +556,34 @@ declare module "@fnndsc/chrisapi" {
    * Plugin instance list resource object representing a list of plugin instances.
    */
   export class PluginInstanceList extends ListResource {
-      /**
-       * Constructor
-       *
-       * @param {string} url - url of the resource
-       * @param {Object} auth - authentication object
-       * @param {string} auth.token - authentication token
-       */
-      constructor(url: string, auth: IAuth);
+    /**
+     * Constructor
+     *
+     * @param {string} url - url of the resource
+     * @param {Object} auth - authentication object
+     * @param {string} auth.token - authentication token
+     */
+    constructor(url: string, auth: IAuth);
 
-      /**
-       * Fetch the plugin associated to this plugin instance list from the REST API.
-       *
-       * @param {number} [timeout=30000] - request timeout
-       * @return {Object} - JS Promise, resolves to a ``Plugin`` object
-       */
-      getPlugin: (timeout?: number) => void // Promise<IPlugin>
+    /**
+     * Fetch the plugin associated to this plugin instance list from the REST API.
+     *
+     * @param {number} [timeout=30000] - request timeout
+     * @return {Object} - JS Promise, resolves to a ``Plugin`` object
+     */
+    getPlugin: (timeout?: number) => void // Promise<IPlugin>
 
-      /**
-       * Make a POST request to this plugin instance list resource to create a new plugin
-       * instance item resource through the REST API.
-       *
-       * @param {Object} data - request JSON data object which is plugin-specific and it's
-       * properties can be determined by calling the ``getPOSTDataParameters`` method on this
-       * resource object
-       * @param {number} [timeout=30000] - request timeout
-       * @return {Object} - JS Promise, resolves to ``this`` object
-       */
-      post: (data: object, timeout?: number) => void // Promise<IThis>
+    /**
+     * Make a POST request to this plugin instance list resource to create a new plugin
+     * instance item resource through the REST API.
+     *
+     * @param {Object} data - request JSON data object which is plugin-specific and it's
+     * properties can be determined by calling the ``getPOSTDataParameters`` method on this
+     * resource object
+     * @param {number} [timeout=30000] - request timeout
+     * @return {Object} - JS Promise, resolves to ``this`` object
+     */
+    post: (data: object, timeout?: number) => void // Promise<IThis>
   }
 
   /**
@@ -591,14 +591,14 @@ declare module "@fnndsc/chrisapi" {
    * instances that have this plugin instance as an ancestor in a pipeline tree.
    */
   export class PluginInstanceDescendantList extends ListResource {
-      /**
-       * Constructor
-       *
-       * @param {string} url - url of the resource
-       * @param {Object} auth - authentication object
-       * @param {string} auth.token - authentication token
-       */
-      constructor(url: string, auth: IAuth);
+    /**
+     * Constructor
+     *
+     * @param {string} url - url of the resource
+     * @param {Object} auth - authentication object
+     * @param {string} auth.token - authentication token
+     */
+    constructor(url: string, auth: IAuth);
   }
 
   /**
@@ -606,31 +606,31 @@ declare module "@fnndsc/chrisapi" {
    * plugin instance was run with.
    */
   export class PluginInstanceParameter extends ItemResource {
-      /**
-       * Constructor
-       *
-       * @param {string} url - url of the resource
-       * @param {Object} auth - authentication object
-       * @param {string} auth.token - authentication token
-       */
-      constructor(url: string, auth: IAuth);
-      
-      /**
-       * Fetch the plugin instance associated to this parameter item from the REST API.
-       *
-       * @param {number} [timeout=30000] - request timeout
-       * @return {Object} - JS Promise, resolves to a ``PluginInstance`` object
-       */
-      getPluginInstance: (timeout?: number) => void // Promise<IPluginInstance>
+    /**
+     * Constructor
+     *
+     * @param {string} url - url of the resource
+     * @param {Object} auth - authentication object
+     * @param {string} auth.token - authentication token
+     */
+    constructor(url: string, auth: IAuth);
+    
+    /**
+     * Fetch the plugin instance associated to this parameter item from the REST API.
+     *
+     * @param {number} [timeout=30000] - request timeout
+     * @return {Object} - JS Promise, resolves to a ``PluginInstance`` object
+     */
+    getPluginInstance: (timeout?: number) => void // Promise<IPluginInstance>
 
-      /**
-       * Fetch the plugin parameter definition associated to this plugin instance item
-       * from the REST API.
-       *
-       * @param {number} [timeout=30000] - request timeout
-       * @return {Object} - JS Promise, resolves to a ``PluginParameter`` object
-       */
-      getPluginParameter: (timeout?: number) => void  // Promise<IPluginParameter>
+    /**
+     * Fetch the plugin parameter definition associated to this plugin instance item
+     * from the REST API.
+     *
+     * @param {number} [timeout=30000] - request timeout
+     * @return {Object} - JS Promise, resolves to a ``PluginParameter`` object
+     */
+    getPluginParameter: (timeout?: number) => void  // Promise<IPluginParameter>
   }
 
   /**
@@ -1093,25 +1093,14 @@ declare module "@fnndsc/chrisapi" {
    */
   export class Tag extends ItemResource{
     /**
-     * Constructor  /**
-
     * Constructor
-
-    *
-
-    * @param {string} url - url of the resource
-
-    * @param {Object} auth - authentication object
-
-    * @param {string} auth.token - authentication token
-
-    
-    *
+    * 
     * @param {string} url - url of the resource
     * @param {Object} auth - authentication object
     * @param {string} auth.token - authentication token
     */
     constructor(url: string, auth: IAuth);
+
     /**
      * Fetch a list of feeds that are tagged with this tag from the REST API.
      *
@@ -1133,6 +1122,7 @@ declare module "@fnndsc/chrisapi" {
      * @return {Object} - JS Promise, resolves to a ``TaggingList`` object
      */
     getTaggings: (params:IParams, timeout?: number) => void
+
     /**
      * Make a PUT request to modify this tag item resource through the REST API.
      *
@@ -1142,6 +1132,7 @@ declare module "@fnndsc/chrisapi" {
      * @param {number} [timeout=30000] - request timeout
      * @return {Object} - JS Promise, resolves to ``this`` object
      */
+
     put: (timeout?: number) => void
     /**
      * Make a DELETE request to delete this tag item resource through the REST API.
@@ -1166,6 +1157,7 @@ declare module "@fnndsc/chrisapi" {
      * @param {string} auth.token - authentication token
      */
     constructor(url: string, auth: IAuth);
+
     /**
      * Fetch the tag associated to this tag-specific list of feeds from the REST API.
      *
@@ -1198,6 +1190,7 @@ declare module "@fnndsc/chrisapi" {
      * @return {Object} - JS Promise, resolves to a ``FeedList`` object
      */
     getFeeds: (params: IParams, timeout: number) => void;
+    
     /**
      * Make a POST request to this tag list resource to create a new tag item resource
      * through the REST API.
@@ -1231,6 +1224,7 @@ declare module "@fnndsc/chrisapi" {
      * @return {Object} - JS Promise, resolves to a ``Tag`` object
      */
     getTag: (timeout?: number) => void;
+
     /**
      * Fetch the feed associated to this tagging from the REST API.
      *
@@ -1238,6 +1232,7 @@ declare module "@fnndsc/chrisapi" {
      * @return {Object} - JS Promise, resolves to a ``Feed`` object
      */
     getFeed: (timeout?: number) => void;
+
     /**
      * Make a DELETE request to delete this tagging item resource through the REST API.
      *
@@ -1269,6 +1264,7 @@ declare module "@fnndsc/chrisapi" {
      * @return {Object} - JS Promise, resolves to a ``Tag`` object
      */
     getTag: (timeout?: number) => void;
+
     /**
      * Make a POST request to this tag-specific tagging list resource to create a new
      * tagging item resource through the REST API.
@@ -1300,6 +1296,7 @@ declare module "@fnndsc/chrisapi" {
      * @return {Object} - JS Promise, resolves to a ``Blob`` object
      */
     getFileBlob: (timeout?: number) => void;
+
     /**
      * Make a PUT request to modify this uploaded file item resource through the REST API.
      *
@@ -1310,6 +1307,7 @@ declare module "@fnndsc/chrisapi" {
      * @return {Object} - JS Promise, resolves to ``this`` object
      */
     put:(data: UploadedFilePutData, timeout?: number) => void;
+
     /**
      * Make a DELETE request to delete this uploaded file item resource through the REST API.
      *
